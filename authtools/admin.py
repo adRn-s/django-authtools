@@ -76,9 +76,9 @@ class UserAdmin(StrippedUserAdmin):
     filter_horizontal = ('groups', 'user_permissions',)
 
 
+@admin.register(User)
 class NamedUserAdmin(UserAdmin, StrippedNamedUserAdmin):
     pass
 
 
 # If the model has been swapped, this is basically a noop.
-admin.site.register(User, NamedUserAdmin)
