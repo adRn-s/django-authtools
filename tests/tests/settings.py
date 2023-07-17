@@ -42,7 +42,7 @@ DEBUG = True
 
 AUTH_USER_MODEL = os.environ.get('AUTH_USER_MODEL', 'auth.User')
 
-print('Using %s as the AUTH_USER_MODEL.' % AUTH_USER_MODEL)
+print(f'Using {AUTH_USER_MODEL} as the AUTH_USER_MODEL.')
 
 
 TEMPLATES = [

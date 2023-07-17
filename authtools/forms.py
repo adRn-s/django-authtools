@@ -52,8 +52,7 @@ class BetterReadOnlyPasswordHashWidget(ReadOnlyPasswordHashWidget):
 class UserChangeForm(DjangoUserChangeForm):
     def __init__(self, *args, **kwargs):
         super(UserChangeForm, self).__init__(*args, **kwargs)
-        password = self.fields.get('password')
-        if password:
+        if password := self.fields.get('password'):
             password.widget = BetterReadOnlyPasswordHashWidget()
 
 
@@ -104,10 +103,7 @@ class UserCreationForm(forms.ModelForm):
 
     def _post_clean(self):
         super(UserCreationForm, self)._post_clean()
-        # Validate the password after self.instance is updated with form data
-        # by super().
-        password = self.cleaned_data.get('password2')
-        if password:
+        if password := self.cleaned_data.get('password2'):
             try:
                 password_validation.validate_password(password, self.instance)
             except forms.ValidationError as error:
@@ -138,8 +134,8 @@ class CaseInsensitiveUsernameFieldCreationForm(UserCreationForm):
 # set the correct clean method on the class so that child classes can override and call super()
 setattr(
     CaseInsensitiveUsernameFieldCreationForm,
-    'clean_' + User.USERNAME_FIELD,
-    CaseInsensitiveUsernameFieldCreationForm.clean_USERNAME_FIELD
+    f'clean_{User.USERNAME_FIELD}',
+    CaseInsensitiveUsernameFieldCreationForm.clean_USERNAME_FIELD,
 )
 
 # alias for the old name for backwards-compatability
@@ -165,11 +161,10 @@ class FriendlyPasswordResetForm(OldPasswordResetForm):
         """
 
         email = self.cleaned_data['email']
-        results = list(self.get_users(email))
-
-        if not results:
+        if results := list(self.get_users(email)):
+            return email
+        else:
             raise forms.ValidationError(self.error_messages['unknown'])
-        return email
 
 
 class AuthenticationForm(DjangoAuthenticationForm):
