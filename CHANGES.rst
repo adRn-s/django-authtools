@@ -1,10 +1,20 @@
 CHANGES
 =======
 
-2.0.1 (unreleased)
+2.0.2 (unreleased)
 ------------------
 
 - Nothing changed yet.
+
+
+2.0.1 (2024-03-19)
+------------------
+
+- Resolve `SHA1PasswordHasher` deprecation warning for Django 4.0 and above
+- Resolve `pkg_resources` deprecation warning for Python 3.8 and above
+- Add test coverage for Django 4.1, 4.2, and 5.0
+- Add test coverage for Python 3.11 and 3.12
+- Python 3.5 and 3.6 are no longer availble in GitHub runner using `ubuntu-latest`
 
 
 2.0.0 (2022-07-29)
