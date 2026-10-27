@@ -1,0 +1,32 @@
+[tool.ruff]
+target-version = "py310"  # Minimum supported Python, relevant for UP rules.
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+extend-safe-fixes = [
+    # Comparison to `None` should be `cond is None`
+    "E711",
+    # Avoid equality comparisons to `True`
+    "E712",
+]
+ignore = [
+    # Line too long
+    "E501",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Intentional star import of the base test settings.
+"tests/tests/sqlite_test_settings.py" = ["F403"]

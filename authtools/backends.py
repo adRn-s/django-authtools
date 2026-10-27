@@ -1,7 +1,7 @@
 from django.contrib.auth.backends import ModelBackend
 
 
-class CaseInsensitiveUsernameFieldBackendMixin(object):
+class CaseInsensitiveUsernameFieldBackendMixin:
     """
     This authentication backend assumes that usernames are email addresses and simply
     lowercases a username before an attempt is made to authenticate said username using a
@@ -22,16 +22,14 @@ class CaseInsensitiveUsernameFieldBackendMixin(object):
         if username is not None:
             username = username.lower()
 
-        return super(CaseInsensitiveUsernameFieldBackendMixin, self).authenticate(
-            request,
-            username=username,
-            password=password,
-            **kwargs
+        return super().authenticate(
+            request, username=username, password=password, **kwargs
         )
 
+
 class CaseInsensitiveUsernameFieldModelBackend(
-        CaseInsensitiveUsernameFieldBackendMixin,
-        ModelBackend):
+    CaseInsensitiveUsernameFieldBackendMixin, ModelBackend
+):
     pass
 
 

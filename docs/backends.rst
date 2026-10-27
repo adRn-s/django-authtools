@@ -27,7 +27,7 @@ for authentication.
         Use of this mixin assumes that all usernames are stored in their lowercase form, and
         that there is no way to have usernames differing only in case. If usernames can differ in
         case, this authentication backend mixin could cause errors in user authentication. It is
-        advised that you use this mixin in conjuction with the
+        advised that you use this mixin in conjunction with the
         :class:`~authtools.forms.CaseInsensitiveUsernameFieldCreationForm` form.
 
 .. class:: CaseInsensitiveUsernameFieldBackendMixin

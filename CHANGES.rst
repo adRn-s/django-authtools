@@ -9,6 +9,7 @@ CHANGES
 - Drop support for Python 3.5 to 3.9 and for Django < 5.2. Supported: Python
   3.10 to 3.14 with Django 5.2 (LTS), 6.0 and 6.1 (Django 6.x needs Python 3.12+).
 - Add test coverage for Python 3.13 and 3.14, Django 6.0 and 6.1
+- Add ruff (lint + format, incl. pyupgrade to Python 3.10) and pre-commit configuration; modernize code style
 
 
 2.0.1 (2024-03-19)
@@ -18,7 +19,7 @@ CHANGES
 - Resolve `pkg_resources` deprecation warning for Python 3.8 and above
 - Add test coverage for Django 4.1, 4.2, and 5.0
 - Add test coverage for Python 3.11 and 3.12
-- Python 3.5 and 3.6 are no longer availble in GitHub runner using `ubuntu-latest`
+- Python 3.5 and 3.6 are no longer available in GitHub runner using `ubuntu-latest`
 
 
 2.0.0 (2022-07-29)
