@@ -70,7 +70,7 @@ django-authtools provides a couple of abstract classes for subclassing.
 
 .. class:: authtools.models.AbstractEmailUser
 
-    A no-frills email as username model that satisifes the User contract and
+    A no-frills email as username model that satisfies the User contract and
     the permissions API needed for the Admin site.
 
 .. class:: authtools.models.AbstractNamedUser
