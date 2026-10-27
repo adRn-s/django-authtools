@@ -24,7 +24,7 @@ Python and Django versions by running::
 
 You can also run specific targets using the ``-e`` flag. ::
 
-    $ tox -e py33-dj18
+    $ tox -e py312-dj52
 
 A full list of available tox environments is in the ``tox.ini`` configuration file.
 

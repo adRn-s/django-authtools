@@ -12,7 +12,7 @@ def read(fname):
 
 
 install_requires = [
-    'Django>=2.2',
+    'Django>=5.2',
 ]
 
 setup(
@@ -25,6 +25,7 @@ setup(
     url='https://django-authtools.readthedocs.org/',
     license='BSD',
     packages=[package for package in find_packages() if package.startswith('authtools')],
+    python_requires='>=3.10',
     install_requires=install_requires,
     zip_safe=False,
     include_package_data=True,
@@ -32,18 +33,18 @@ setup(
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Framework :: Django',
+        'Framework :: Django :: 5.2',
+        'Framework :: Django :: 6.0',
+        'Framework :: Django :: 6.1',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
+        'Programming Language :: Python :: 3.14',
     ],
 )
