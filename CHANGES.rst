@@ -4,7 +4,11 @@ CHANGES
 2.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+** BREAKING **
+
+- Drop support for Python 3.5 to 3.9 and for Django < 5.2. Supported: Python
+  3.10 to 3.14 with Django 5.2 (LTS), 6.0 and 6.1 (Django 6.x needs Python 3.12+).
+- Add test coverage for Python 3.13 and 3.14, Django 6.0 and 6.1
 
 
 2.0.1 (2024-03-19)

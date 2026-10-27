@@ -16,8 +16,7 @@ import sys, os
 sys.path.append(os.path.abspath('_themes'))
 sys.path.append(os.path.abspath('_ext'))
 
-import pkg_resources
-distribution = pkg_resources.get_distribution('django-authtools')
+from importlib.metadata import version as _dist_version
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -55,7 +54,7 @@ copyright = u'2013, Fusionbox, Inc.'
 # built documents.
 #
 # The full version, including alpha/beta/rc tags.
-release = distribution.version
+release = _dist_version('django-authtools')
 # The short X.Y version.
 version = '.'.join(release.split('.')[:2])
 

@@ -63,3 +63,9 @@ PASSWORD_HASHERS = [
 ]
 
 USE_TZ = False
+
+# Required by Django 6.1+ to avoid a RemovedInDjango2028Warning on send_mail();
+# ignored by older Django versions. The test runner swaps in the locmem backend.
+MAILERS = {
+    'default': {'BACKEND': 'django.core.mail.backends.smtp.EmailBackend'},
+}
